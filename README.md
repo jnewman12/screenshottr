@@ -2,7 +2,10 @@
 
 Screenshot tool for dev workflows and AI coding agents. Captures full pages or specific elements, handles lazy-loaded content, and auto-increments filenames so you never overwrite a previous capture.
 
-Works as a **CLI**, a **library**, a **Claude Code skill**, and a **GitHub Action**.
+Works as a
+- **CLI**
+- **library**
+- **agent skill**
 
 ## Install
 
@@ -120,23 +123,6 @@ cp node_modules/screenshottr/skill/screenshottr.md ~/.claude/skills/
 ```
 
 Once installed, Claude Code will automatically know how to capture and compare screenshots during development.
-
-## GitHub Action
-
-Add visual regression screenshots to your pull requests:
-
-```yaml
-- name: Screenshot pages
-  uses: jnewman12/screenshottr@v1
-  with:
-    url: http://localhost:3000
-    pages: |
-      /
-      /services
-      / --selector="#hero" hero
-```
-
-See [action/action.yml](action/action.yml) for all inputs and outputs.
 
 ## Modes
 
