@@ -1,0 +1,49 @@
+name: "screenshottr"
+description: "Capture screenshots of your site in CI. Visual regression testing for pull requests."
+author: "jnewman12"
+
+branding:
+  icon: "camera"
+  color: "purple"
+
+inputs:
+  url:
+    description: "Base URL to screenshot (e.g., http://localhost:3000)"
+    required: true
+    default: "http://localhost:3000"
+  pages:
+    description: |
+      Pages and selectors to capture, one per line.
+      Format: [path] [--selector=SEL] [label]
+      Example:
+        /
+        /services
+        / --selector="#hero" hero
+    required: false
+    default: "/"
+  mode:
+    description: "Capture mode: default (1440px) or reference (1920px)"
+    required: false
+    default: "default"
+  compare:
+    description: "Compare against base branch screenshots (true/false)"
+    required: false
+    default: "false"
+  upload-artifact:
+    description: "Upload screenshots as a GitHub Actions artifact (true/false)"
+    required: false
+    default: "true"
+  comment:
+    description: "Post screenshots as a PR comment (true/false)"
+    required: false
+    default: "true"
+
+outputs:
+  screenshots:
+    description: "JSON array of screenshot file paths"
+  diff-count:
+    description: "Number of pages with visual differences (when compare=true)"
+
+runs:
+  using: "node20"
+  main: "index.js"

@@ -1,0 +1,48 @@
+{
+  "name": "screenshottr",
+  "version": "0.1.0",
+  "description": "Screenshot tool for dev workflows and AI coding agents. CLI + library + Claude Code skill.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "bin": {
+    "screenshottr": "./bin/screenshottr.ts"
+  },
+  "scripts": {
+    "dev": "bun run bin/screenshottr.ts",
+    "test": "bun test",
+    "build": "bun build ./src/index.ts --outdir ./dist --target node",
+    "build:cli": "bun build ./bin/screenshottr.ts --compile --outfile ./dist/screenshottr"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "dist/",
+    "skill/",
+    "action/",
+    "README.md"
+  ],
+  "keywords": [
+    "screenshot",
+    "puppeteer",
+    "cli",
+    "visual-regression",
+    "ai-agent",
+    "claude-code",
+    "dev-tools"
+  ],
+  "license": "MIT",
+  "author": "jnewman12",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jnewman12/screenshottr"
+  },
+  "homepage": "https://github.com/jnewman12/screenshottr#readme",
+  "peerDependencies": {
+    "puppeteer": ">=20.0.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.0.0",
+    "@types/bun": "latest"
+  }
+}
